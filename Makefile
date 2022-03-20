@@ -10,3 +10,5 @@ LINKER_FLAGS =
 
 all:
 	$(CC) $(C_FLAGS) $(LINKER_FLAGS) $(INCLUDE_PATHS) $(LIB_PATH) $(SRC_FILES) -o $(BUILD_DIR)/$(OBJ_NAME)
+run:
+	./build/Debug/app

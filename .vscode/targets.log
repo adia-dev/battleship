@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Thu Mar 17 15:55:38 2022
+# Make data base, printed on Sun Mar 20 19:09:07 2022
 
 # Variables
 
@@ -44,15 +44,13 @@ INFOPATH = /opt/homebrew/share/info:
 # environment
 P9K_SSH = 0
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/l9/53v1rfj906bdh4cjc7cct6wm0000gn/T/vscode-ipc-fe875244-a22e-408a-84c5-61747b816696.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/l9/53v1rfj906bdh4cjc7cct6wm0000gn/T/vscode-ipc-a28d890b-5c9a-4ed6-bf40-4b3a88a65eba.sock
 # environment
 VSCODE_CWD = /
 # environment
 PATH = /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Visual Studio Code.app/Contents/Resources/app/binPOWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
-# environment
-LaunchInstanceID = 7B6A19F0-DFB6-49E9-92C7-68460DB427F6
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -62,7 +60,7 @@ INCLUDE_PATHS = -Iinclude
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.adSBNtJQ46/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.drdbqgorio/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -157,16 +155,14 @@ SRC_DIR = src
 <F = $(notdir $<)
 # makefile (from `Makefile', line 8)
 C_FLAGS = -Wall -O0 -g
- 
 # environment
 PAGER = less
 # environment
 LC_ALL = C
-# environment
-SECURITYSESSIONID = 186b2
 # automatic
 ^F = $(notdir $^)
 # makefile (from `Makefile', line 4)
+ 
 SRC_FILES = $(wildcard $(SRC_DIR)/*.c)
 # default
 SUFFIXES := 
@@ -179,9 +175,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 618
+VSCODE_PID = 4444
 # variable set hash-table stats:
-# Load=83/1024=8%, Rehash=0, Collisions=1/118=1%
+# Load=81/1024=8%, Rehash=0, Collisions=1/116=1%
 
 # Pattern-specific Variable Values
 
@@ -189,10 +185,10 @@ VSCODE_PID = 618
 
 # Directories
 
-# . (device 16777230, inode 24167276): 8 files, no impossibilities.
-# src (device 16777230, inode 24167535): 3 files, no impossibilities.
+# . (device 16777231, inode 24167276): 9 files, no impossibilities.
+# src (device 16777231, inode 24167535): 9 files, no impossibilities.
 
-# 11 files, no impossibilities in 2 directories.
+# 18 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -238,7 +234,7 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-03-11 11:54:03
+#  Last modified 2022-03-18 16:47:17
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -250,8 +246,16 @@ Makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
+run:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 14):
+	./build/Debug/app
+	
+
 # files hash-table stats:
-# Load=4/1024=0%, Rehash=0, Collisions=0/18=0%
+# Load=5/1024=0%, Rehash=0, Collisions=0/19=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -263,6 +267,6 @@ Makefile:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu Mar 17 15:55:38 2022
+# Finished Make data base on Sun Mar 20 19:09:07 2022
 
  

@@ -43,6 +43,7 @@
     "ship.h": "c",
     "board.h": "c",
     "string.h": "c",
-    "game_manager.h": "c"
+    "game_manager.h": "c",
+    "stdio.h": "c"
   }
 }
