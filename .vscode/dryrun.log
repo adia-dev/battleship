@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/abdoulayedia/Dev/C/battleship'
+gcc -Wall -O0 -g  -Iinclude -Llib src/board.c src/client.c src/game_manager.c src/main.c src/multi_server.c src/ship.c -o build/Debug/app
+make: Leaving directory `/Users/abdoulayedia/Dev/C/battleship'
+ 
