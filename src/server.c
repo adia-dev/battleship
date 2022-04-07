@@ -25,12 +25,7 @@ int startServer(int port)
 
   // set of socket descriptors
   fd_set readfds;
-  int bombs[10][10] = {0};
-
-  key_t key = ftok("shmfile", 65);
-
-  // shmget returns an identifier in shmid
-  int shmid = shmget(key, 1024, 0666 | IPC_CREAT);
+  int boats[10][10] = {0};
 
   renderMap(map, 10, 10);
 
@@ -38,6 +33,7 @@ int startServer(int port)
   scanf("%d", &min_client_count);
   fflush(stdin);
 
+editMap:
   printf("Nombre de bateaux a placer: ");
   scanf("%d", &numberOfBoats);
   fflush(stdin);
@@ -56,15 +52,15 @@ int startServer(int port)
     fflush(stdin);
 
     map[y][x] = 'B';
-    bombs[y][x] = 1;
+    boats[y][x] = 1;
     renderMap(map, 10, 10);
   }
 
   int choice = 0;
-
+menu:
   printf("\nVoici votre carte final: \n");
   renderMap(map, 10, 10);
-  printf("\n\t0 - Quitter\n\t1 - Lancer la partie\n\t2 - Editer la carte\n\t3 - Voir la liste des participants\n\t4 - Configurer le serveur\n\n: ");
+  printf("\n\t0 - Quitter\n\t1 - Lancer la partie\n\t2 - Editer la carte\n\t3 - Editer le nombre minimum de participants\n\n: ");
   scanf("%d", &choice);
 
   resetMap(map, 10, 10);
@@ -73,7 +69,7 @@ int startServer(int port)
   {
   case 0:
     printf("\nFermeture du serveur");
-    for (size_t i = 0; i < 6; i++)
+    for (size_t i = 0; i < 3; i++)
     {
       printf(".");
       usleep(500000);
@@ -83,17 +79,20 @@ int startServer(int port)
     return EXIT_SUCCESS;
 
     break;
-
+  case 2:
+    goto editMap;
+  case 3:
+    printf("Nombre de participants minimum: ");
+    scanf("%d", &min_client_count);
+    fflush(stdin);
+    goto menu;
+    break;
   default:
-    renderMap(map, 10, 10);
-
     break;
   }
 
-  // a message
-  char *message = "Welcome to the server !! \r\n";
+  renderMap(map, 10, 10);
 
-  // initialise all client_socket[] to 0 so not checked
   for (i = 0; i < max_clients; i++)
   {
     client_socket[i] = 0;
@@ -239,13 +238,20 @@ int startServer(int port)
         {
           int x = buffer[0] - '0';
           int y = buffer[1] - '0';
-          if (bombs[y][x] == 1)
+          if (boats[y][x] == 1)
           {
             map[y][x] = 'B';
-            bombs[y][x] = 2;
+            boats[y][x] = 2;
             printf("Bomb discovered at position (%d, %d)\n", x, y);
+            numberOfBoats--;
+
+            if (numberOfBoats == 0)
+            {
+              printf("Vous avez gagner !!\n");
+              return 0;
+            }
           }
-          else if (bombs[y][x] == 2)
+          else if (boats[y][x] == 2)
           {
             printf("This bomb has already been discovered...\nTry again\n");
           }

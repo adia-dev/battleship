@@ -7,11 +7,11 @@ CLIENT_FILES = $(SRC_DIR)/client.c
 OBJ_NAME = app
 INCLUDE_PATHS = -Iinclude
 LIB_PATH = -Llib
-C_FLAGS =  -Wall -O0 -g
+C_FLAGS =  -O0 -g
 LINKER_FLAGS = 
 
 all:
-	$(CC) $(C_FLAGS) $(LINKER_FLAGS) $(INCLUDE_PATHS) $(LIB_PATH) $(SRC_FILES) -o $(SRC_DIR)/admin
+	$(CC) $(C_FLAGS) $(LINKER_FLAGS) $(INCLUDE_PATHS) $(LIB_PATH) $(SRC_FILES) -o $(SRC_DIR)/app
 
 server:
 	$(CC) $(C_FLAGS) $(LINKER_FLAGS) $(INCLUDE_PATHS) $(LIB_PATH) $(SERVER_FILES) -o $(BUILD_DIR)/server
@@ -23,7 +23,7 @@ run:
 	./build/Debug/app
 
 run_admin:
-	./src/admin -u admin -p admin
+	./src/app -u admin -p admin
 
 run_client:
-	./src/admin -u user_2 -p Respons11
+	./src/app -u user_2 -p Respons11
